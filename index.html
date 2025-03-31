@@ -32,8 +32,11 @@
 
     <script>
        function loadStructure(fileName) {
-    Jmol.script(jmolApplet, `load https://raw.githubusercontent.com/GustFag/Projeto-Integrador-Quimica-em-3D/main/${fileName}`);
+    let url = `https://raw.githubusercontent.com/GustFag/Projeto-Integrador-Quimica-em-3D/main/${fileName}`;
+    console.log("Carregando estrutura de:", url);
+    Jmol.script(jmolApplet, `load ${url}`);
 }
+
     </script>
 </body>
 </html>
