@@ -8,6 +8,7 @@
     <style>
         body { font-family: Arial, sans-serif; text-align: center; }
         #container { width: 80%; margin: auto; }
+        .btn-container { margin-top: 20px; }
         button { margin: 10px; padding: 10px; font-size: 16px; cursor: pointer; }
     </style>
 </head>
@@ -18,17 +19,20 @@
             var jmolApplet = Jmol.getApplet("jmol", { 
                 width: 400, 
                 height: 400, 
-                j2sPath: "https://chemapps.stolaf.edu/jmol/jsmol/j2s",
+                j2sPath: "https://chemapps.stolaf.edu/jmol/jsmol/j2s"
             });
         </script>
     </div>
-    <button onclick="loadStructure('cubo simples.pdb')">Cubo Simples</button>
-    <button onclick="loadStructure('quartzo.pdb')">Quartzo</button>
-    <button onclick="loadStructure('diamante.pdb')">Diamante</button>
+
+    <div class="btn-container">
+        <button onclick="loadStructure('cubo simples.pdb')">Cubo Simples</button>
+        <button onclick="loadStructure('quartzo.pdb')">Quartzo</button>
+        <button onclick="loadStructure('diamante.pdb')">Diamante</button>
+    </div>
 
     <script>
         function loadStructure(fileName) {
-            Jmol.script(jmolApplet, `load https://gustfag.github.io/meu-site-de-estruturas/${fileName}`);
+            Jmol.script(jmolApplet, `load https://GustFag.github.io/main/${fileName}`);
         }
     </script>
 </body>
