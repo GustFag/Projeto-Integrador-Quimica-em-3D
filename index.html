@@ -8,19 +8,28 @@
     <style>
         body { font-family: Arial, sans-serif; text-align: center; }
         #container { width: 80%; margin: auto; }
+        button { margin: 10px; padding: 10px; font-size: 16px; cursor: pointer; }
     </style>
 </head>
 <body>
     <h2>Visualizador de Estruturas Cristalinas</h2>
     <div id="container">
         <script type="text/javascript">
-            Jmol.getApplet("jmol", { 
+            var jmolApplet = Jmol.getApplet("jmol", { 
                 width: 400, 
                 height: 400, 
                 j2sPath: "https://chemapps.stolaf.edu/jmol/jsmol/j2s",
-                script: "load https://chemapps.stolaf.edu/jmol/jsmol/data/caffeine.mol"
             });
         </script>
     </div>
+    <button onclick="loadStructure('cubo simples.pdb')">Cubo Simples</button>
+    <button onclick="loadStructure('quartzo.pdb')">Quartzo</button>
+    <button onclick="loadStructure('diamante.pdb')">Diamante</button>
+
+    <script>
+        function loadStructure(fileName) {
+            Jmol.script(jmolApplet, `load https://seu-usuario.github.io/meu-site-de-estruturas/${fileName}`);
+        }
+    </script>
 </body>
 </html>
